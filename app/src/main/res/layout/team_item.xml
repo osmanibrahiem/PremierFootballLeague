@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="team"
+            type="io.orcas.pfl.model.Team" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/item_guideline_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/item_guideline_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/item_marginStartEnd"
+            android:layout_marginBottom="@dimen/item_marginStartEnd"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="986:355"
+            app:layout_constraintEnd_toEndOf="@id/item_guideline_end"
+            app:layout_constraintStart_toStartOf="@id/item_guideline_start"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/item_cl_root_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/item_image_view"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/item_marginStartEnd"
+                    android:layout_marginBottom="@dimen/item_marginStartEnd"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@null"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintDimensionRatio="331:255"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:teamImage="@{team.crestUrl}" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/item_name"
+                    style="@style/Field.Title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/item_marginStartEnd"
+                    app:layout_constraintBottom_toTopOf="@id/item_colors"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/item_image_view"
+                    app:layout_constraintTop_toTopOf="@id/item_image_view"
+                    tools:text="@{team.name}" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/item_colors"
+                    style="@style/Field.Details"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toTopOf="@id/item_venue"
+                    app:layout_constraintEnd_toEndOf="@id/item_name"
+                    app:layout_constraintStart_toStartOf="@id/item_name"
+                    app:layout_constraintTop_toBottomOf="@id/item_name"
+                    tools:text="@{team.clubColors}" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/item_venue"
+                    style="@style/Field.Details"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toTopOf="@id/item_website"
+                    app:layout_constraintEnd_toEndOf="@id/item_colors"
+                    app:layout_constraintStart_toStartOf="@id/item_colors"
+                    app:layout_constraintTop_toBottomOf="@id/item_colors"
+                    tools:text="@{team.venue}" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/item_website"
+                    style="@style/Field.Details"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/item_venue"
+                    app:layout_constraintStart_toStartOf="@id/item_venue"
+                    app:layout_constraintTop_toBottomOf="@id/item_venue"
+                    tools:text="@{team.website}" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

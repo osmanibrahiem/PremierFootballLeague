@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F1052</color>
+    <color name="colorPrimaryDark">#2F063F</color>
+    <color name="colorAccent">#630F85</color>
+
+    <color name="title">#FFFFFF</color>
+    <color name="primaryText">#212121</color>
+    <color name="secondaryText">#727272</color>
+    <color name="divider">#B6B6B6</color>
+    <color name="team_details_cover_tint">#11000000</color>
+    <color name="team_details_title_tint">#31000000</color>
+
+
+    <color name="placeholder">#dddddd</color>
+    <color name="transparent">#00000000</color>
+    <color name="white">#FFFAF9</color>
+
+</resources>
